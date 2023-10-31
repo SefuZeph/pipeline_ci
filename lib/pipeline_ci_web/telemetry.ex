@@ -1,4 +1,8 @@
 defmodule PipelineCiWeb.Telemetry do
+  @moduledoc """
+  This module provides a public API for all search queries originating
+  in the web layer.
+  """
   use Supervisor
   import Telemetry.Metrics
 
