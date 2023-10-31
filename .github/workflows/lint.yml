@@ -2,11 +2,11 @@ name: Check Lint
 
 on: pull_request
 
-jobs: 
+jobs:
   check_lint:
     runs-on: ubuntu-latest
-    strategy: 
-      matrix: 
+    strategy:
+      matrix:
         elixir: [1.14]
         otp: [24]
     steps:
@@ -20,7 +20,7 @@ jobs:
         with:
           path: deps
           key: ${{ runner.os }}-${{ matrix.otp }}-${{ matrix.elixir }}-mix-${{ hashFiles(format('{0}-{1}', github.workspace, '/mix.lock')) }}
-      - name:  Install Mix Dependencies
+      - name: Install Mix Dependencies
         if: steps.mix-lint-cache.outputs.cache-hit != 'true'
         run: mix deps.get
       - name: Check LINT
