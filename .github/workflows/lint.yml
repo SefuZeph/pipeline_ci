@@ -23,3 +23,5 @@ jobs:
       - name:  Install Mix Dependencies
         if: steps.mix-lint-cache.outputs.cache-hit != 'true'
         run: mix deps.get
+      - name: Check LINT
+        run: mix credo --strict
