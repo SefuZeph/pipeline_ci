@@ -14,7 +14,7 @@ defmodule Telephony.Core do
     end
   end
 
-  def create_subscriber(_subscribers,_payload) do
+  def create_subscriber(_subscribers, _payload) do
     {:error, "Only 'prepaid' or 'postpaid' are accepted"}
   end
 

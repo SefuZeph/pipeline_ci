@@ -1,8 +1,8 @@
 defmodule Telephony.Core.Subscriber do
-  alias Telephony.Core.{Prepaid,Postpaid}
+  alias Telephony.Core.{Prepaid, Postpaid}
   defstruct full_name: nil, phone_number: nil, subscriber_type: :prepaid
 
-  def new(%{subscriber_type: :prepaid}=payload) do
+  def new(%{subscriber_type: :prepaid} = payload) do
     payload = %{payload | subscriber_type: %Prepaid{}}
     struct(__MODULE__, payload)
   end

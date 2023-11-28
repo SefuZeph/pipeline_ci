@@ -12,7 +12,7 @@ defmodule Telephony.CoreTest do
       }
     ]
 
-    payload = %{full_name: "Gustavo", phone_number: "123",subscriber_type: :prepaid}
+    payload = %{full_name: "Gustavo", phone_number: "123", subscriber_type: :prepaid}
 
     %{subscribers: subscribers, payload: payload}
   end
